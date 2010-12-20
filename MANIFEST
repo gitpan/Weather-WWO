@@ -10,6 +10,7 @@ inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
+lib/inc/Module/Install.pm
 lib/Weather/WWO.pm
 lib/Weather/WWO/Types.pm
 Makefile.PL

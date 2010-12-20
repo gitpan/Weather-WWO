@@ -19,6 +19,7 @@ no_index:
     - inc
     - t
 requires:
+  Data::Dumper::Concise: 0
   JSON: 0
   LWP::Simple: 0
   Moose: 1.21
@@ -26,4 +27,4 @@ requires:
   namespace::autoclean: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.02
+version: 0.03

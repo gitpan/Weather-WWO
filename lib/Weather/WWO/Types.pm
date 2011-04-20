@@ -1,4 +1,8 @@
+use strict;
 package Weather::WWO::Types;
+BEGIN {
+  $Weather::WWO::Types::VERSION = '0.04';
+}
 use Moose::Util::TypeConstraints;
 use Regexp::Common qw/ zip net /;
 
@@ -11,6 +15,13 @@ coerce 'Location',
     from 'Str',
     via { s/\s+//g };
 
+=head1 Methods
+
+=head2 is_proper_location_type
+
+Determine if a given location is of the proper type: an IP, zip code or lat./long.
+
+=cut
 
 sub is_proper_location_type {
     my $location = shift;
@@ -30,6 +41,12 @@ sub is_proper_location_type {
     }
 }
 
+=head2 is_lat_long_location
+
+Given a location return true if it's a lat/long otherwise return false
+
+=cut
+
 sub is_lat_long_location {
     my $location = shift;
 
@@ -41,6 +58,12 @@ sub is_lat_long_location {
         return 0;
     }
 }
+
+=head2 is_int_or_float
+
+Does this thing look like a number?
+
+=cut
 
 sub is_int_or_float {
     my $candidate = shift;

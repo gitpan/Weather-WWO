@@ -1,30 +1,25 @@
 ---
-abstract: 'Simple API to World Weather Online'
+abstract: 'World Weather Online Data'
 author:
-  - 'Mateu Hunter C<hunter@missoula.org>'
-  - 'Mateu X Hunter'
+  - 'Mateu X Hunter <hunter@missoula.org>'
 build_requires:
-  ExtUtils::MakeMaker: 6.42
+  English: 0
+  Test::More: 0
 configure_requires:
-  ExtUtils::MakeMaker: 6.42
-distribution_type: module
-generated_by: 'Module::Install version 1.00'
+  ExtUtils::MakeMaker: 6.31
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.110580'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Weather-WWO
-no_index:
-  directory:
-    - inc
-    - t
 requires:
   Data::Dumper::Concise: 0
   JSON: 0
   LWP::Simple: 0
-  Moose: 1.21
+  Moose: 0
+  Moose::Util::TypeConstraints: 0
   Regexp::Common: 0
   namespace::autoclean: 0
-resources:
-  license: http://dev.perl.org/licenses/
-version: 0.03
+version: 0.04

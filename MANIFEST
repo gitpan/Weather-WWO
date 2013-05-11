@@ -6,8 +6,6 @@ Makefile.PL
 README
 dist.ini
 lib/Weather/WWO.pm
-lib/Weather/WWO/Types.pm
 t/author-critic.t
-t/release-pod-coverage.t
 t/release-pod-syntax.t
 t/temperature.t

@@ -4,39 +4,53 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'World Weather Online Data',
-  'AUTHOR' => 'Mateu X Hunter <hunter@missoula.org>',
-  'BUILD_REQUIRES' => {
-    'English' => '0',
-    'Test::More' => '0'
+  "ABSTRACT" => "World Weather Online Data",
+  "AUTHOR" => "Mateu Hunter C<hunter\@missoula.org>",
+  "BUILD_REQUIRES" => {},
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+  "DISTNAME" => "Weather-WWO",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "Weather::WWO",
+  "PREREQ_PM" => {
+    "Data::Dumper::Concise" => 0,
+    "JSON" => 0,
+    "LWP::Simple" => 0,
+    "Moo" => 0,
+    "MooX::Types::MooseLike::Base" => 0,
+    "strictures" => 0
   },
-  'DISTNAME' => 'Weather-WWO',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'Weather::WWO',
-  'PREREQ_PM' => {
-    'Data::Dumper::Concise' => '0',
-    'JSON' => '0',
-    'LWP::Simple' => '0',
-    'Moose' => '0',
-    'Moose::Util::TypeConstraints' => '0',
-    'Regexp::Common' => '0',
-    'namespace::autoclean' => '0'
+  "TEST_REQUIRES" => {
+    "Test::More" => 0,
+    "strict" => 0,
+    "warnings" => 0
   },
-  'VERSION' => '0.04',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "0.05",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
+  my $tr = delete $WriteMakefileArgs{TEST_REQUIRES};
+  my $br = $WriteMakefileArgs{BUILD_REQUIRES};
+  for my $mod ( keys %$tr ) {
+    if ( exists $br->{$mod} ) {
+      $br->{$mod} = $tr->{$mod} if $tr->{$mod} > $br->{$mod};
+    }
+    else {
+      $br->{$mod} = $tr->{$mod};
+    }
+  }
+}
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
   my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};

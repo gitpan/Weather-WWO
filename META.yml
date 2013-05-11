@@ -1,14 +1,15 @@
 ---
 abstract: 'World Weather Online Data'
 author:
-  - 'Mateu X Hunter <hunter@missoula.org>'
+  - 'Mateu Hunter C<hunter@missoula.org>'
 build_requires:
-  English: 0
   Test::More: 0
+  strict: 0
+  warnings: 0
 configure_requires:
-  ExtUtils::MakeMaker: 6.31
+  ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.110580'
+generated_by: 'Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -18,8 +19,7 @@ requires:
   Data::Dumper::Concise: 0
   JSON: 0
   LWP::Simple: 0
-  Moose: 0
-  Moose::Util::TypeConstraints: 0
-  Regexp::Common: 0
-  namespace::autoclean: 0
-version: 0.04
+  Moo: 0
+  MooX::Types::MooseLike::Base: 0
+  strictures: 0
+version: 0.05

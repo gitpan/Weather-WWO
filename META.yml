@@ -16,10 +16,9 @@ meta-spec:
   version: 1.4
 name: Weather-WWO
 requires:
-  Data::Dumper::Concise: 0
+  HTTP::Tiny: 0
   JSON: 0
-  LWP::Simple: 0
   Moo: 0
   MooX::Types::MooseLike::Base: 0
   strictures: 0
-version: 0.06
+version: 0.07

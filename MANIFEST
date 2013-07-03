@@ -9,3 +9,4 @@ lib/Weather/WWO.pm
 t/author-critic.t
 t/release-pod-syntax.t
 t/temperature.t
+xt/real-api-key.t

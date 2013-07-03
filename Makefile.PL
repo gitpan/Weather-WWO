@@ -20,9 +20,8 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Weather::WWO",
   "PREREQ_PM" => {
-    "Data::Dumper::Concise" => 0,
+    "HTTP::Tiny" => 0,
     "JSON" => 0,
-    "LWP::Simple" => 0,
     "Moo" => 0,
     "MooX::Types::MooseLike::Base" => 0,
     "strictures" => 0
@@ -32,7 +31,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.06",
+  "VERSION" => "0.07",
   "test" => {
     "TESTS" => "t/*.t"
   }
